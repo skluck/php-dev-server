@@ -1,0 +1,14 @@
+{
+    "name": "skluck/php-dev-server",
+    "authors": [
+        { "name": "Steve Kluck", "email": "steve@kluck.engineering" }
+    ],
+
+    "autoload": {
+        "psr-4": { "SK\\Server\\": "src" }
+    },
+
+    "require": {
+        "symfony/web-server-bundle": "~4.1"
+    }
+}
