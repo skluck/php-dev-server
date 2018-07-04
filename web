@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+use SK\Server\ProcessHandler;
+use SK\Server\FPMProcess;
+use SK\Server\CaddyProcess;
+
+set_time_limit(0);
+
+require __DIR__ . '/vendor/autoload.php';
+
+$configDir = __DIR__ . '/config';
+$workingDir = __DIR__;
+
+$processes = [
+    new FPMProcess($configDir, $workingDir),
+    new CaddyProcess($configDir, $workingDir),
+];
+
+$handler = new ProcessHandler($processes);
+$handler->run();
